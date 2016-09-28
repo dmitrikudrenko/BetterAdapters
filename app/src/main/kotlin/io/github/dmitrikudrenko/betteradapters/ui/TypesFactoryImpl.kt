@@ -7,7 +7,6 @@ import io.github.dmitrikudrenko.betteradapters.model.Mouse
 import io.github.dmitrikudrenko.betteradapters.ui.holder.BetterViewHolder
 import io.github.dmitrikudrenko.betteradapters.ui.holder.DuckHolder
 import io.github.dmitrikudrenko.betteradapters.ui.holder.MouseHolder
-import io.github.dmitrikudrenko.betteradapters.ui.viewmodel.ViewModel
 
 
 class TypesFactoryImpl : TypesFactory {
@@ -19,7 +18,7 @@ class TypesFactoryImpl : TypesFactory {
         return R.layout.v_item_mouse
     }
 
-    override fun holder(type: Int, view: View): BetterViewHolder<ViewModel> {
+    override fun holder(type: Int, view: View): BetterViewHolder<*> {
         when(type) {
             R.layout.v_item_duck -> return DuckHolder(view)
             R.layout.v_item_mouse -> return MouseHolder(view)

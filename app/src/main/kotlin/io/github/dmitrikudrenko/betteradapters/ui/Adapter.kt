@@ -21,7 +21,7 @@ class Adapter(val items: Array<ViewModel>) : RecyclerView.Adapter<BetterViewHold
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BetterViewHolder<ViewModel> {
         if (parent != null) {
             val view = LayoutInflater.from(parent.context).inflate(viewType, parent, false)
-            return typeFactory.holder(viewType, view)
+            return typeFactory.holder(viewType, view) as BetterViewHolder<ViewModel>
         }
         throw RuntimeException("Parent is null")
     }
