@@ -10,18 +10,15 @@ import io.github.dmitrikudrenko.betteradapters.ui.holder.MouseHolder
 
 
 class TypesFactoryImpl : TypesFactory {
-    override fun type(duck: Duck): Int {
-        return R.layout.v_item_duck
-    }
 
-    override fun type(mouse: Mouse): Int {
-        return R.layout.v_item_mouse
-    }
+    override fun type(duck: Duck) = R.layout.v_item_duck
+
+    override fun type(mouse: Mouse) = R.layout.v_item_mouse
 
     override fun holder(type: Int, view: View): BetterViewHolder<*> {
-        when(type) {
-            R.layout.v_item_duck -> return DuckHolder(view)
-            R.layout.v_item_mouse -> return MouseHolder(view)
+        return when(type) {
+            R.layout.v_item_duck -> DuckHolder(view)
+            R.layout.v_item_mouse -> MouseHolder(view)
             else -> throw RuntimeException("Illegal view type")
         }
     }
