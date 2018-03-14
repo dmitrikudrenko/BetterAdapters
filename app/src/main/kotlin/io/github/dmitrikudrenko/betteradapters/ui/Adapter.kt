@@ -7,8 +7,9 @@ import io.github.dmitrikudrenko.betteradapters.ui.holder.BetterViewHolder
 import io.github.dmitrikudrenko.betteradapters.ui.viewmodel.ViewModel
 
 
-class Adapter(val items: Array<ViewModel>) : RecyclerView.Adapter<BetterViewHolder<ViewModel>>() {
-    private val typeFactory = TypesFactoryImpl()
+class Adapter(val items: Array<ViewModel>,
+              val typeFactory: TypesFactory)
+    : RecyclerView.Adapter<BetterViewHolder<ViewModel>>() {
 
     override fun getItemCount(): Int {
         return items.count()
